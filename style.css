@@ -4,14 +4,130 @@
     box-sizing: border-box;
 }
 
+header {
+    position: absolute;
+    width: 100%;
+}
+.header-container {
+    margin-top: 60px;
+    padding: 60px 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-logo {
+}
+.header-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+    color: #F1CDB3;
+    letter-spacing: 1px;
+}
+.header-subtitle {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+.header-nav {
+}
+.nav-list {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+.nav-item {
+    position: relative;
+}
+.nav-link {
+    line-height: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #CDCDCD;
+    text-decoration: none;
+    transition: .3s;
+}
+.nav-item:hover > .nav-link {
+    color: #FAFAFA;
+}
+.nav-item:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F1CDB3;
+}
+
+
 .section {
     width: 100%;
     height: 700px;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
 }
 .hero {
     height: 100vh;
     background: linear-gradient(270deg, #242223, #473A30);
 }
+
+.hero-content {
+    padding: 180px 40px 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.hero-description {
+    width: 460px;
+}
+.hero-title {
+    font-size: 44px;
+    line-height: 57.2px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-family: Georgia;
+}
+.hero-text {
+    margin-top: 40px;
+    color: #CDCDCD;
+    line-height: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+
+}
+.hero-button {
+    cursor: pointer;
+    margin-top: 40px;
+    padding: 15px 45px;
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    border-radius: 100px;
+    border: 0;
+    background-color: #F1CDB3;
+    transition: .3s;
+}
+.hero-button:hover {
+    background-color: #e0aa83
+}
+.hero-image {
+    display: flex;
+    margin-top: auto;
+    margin-left: auto;
+}
+
 .about {
 }
 .pets {
