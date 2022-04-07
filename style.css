@@ -26,16 +26,17 @@ header {
     font-size: 32px;
     line-height: 35px;
     color: #F1CDB3;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 .header-subtitle {
     margin-top: 10px;
+    margin-left: 4px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 15px;
     color: #FFFFFF;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 .header-nav {
 }
@@ -56,10 +57,10 @@ header {
     text-decoration: none;
     transition: .3s;
 }
-.nav-item:hover > .nav-link, .nav-item-active > .nav-link {
+.nav-item:hover > .nav-link {
     color: #FAFAFA;
 }
-.nav-item:hover:after, .nav-item-active:after {
+ .nav-item-active:after {
     content: '';
     position: absolute;
     left: 0;
@@ -69,10 +70,8 @@ header {
     background-color: #F1CDB3;
 }
 
-
 .section {
     width: 100%;
-    min-height: 300px;
 }
 .container {
     max-width: 1280px;
@@ -80,7 +79,7 @@ header {
     height: 100%;
 }
 .hero {
-    height: 100vh;
+    /* height: 100vh; */
     background: linear-gradient(270deg, #242223, #473A30);
 }
 
@@ -88,10 +87,11 @@ header {
     padding: 180px 40px 0 40px;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
+    /* align-items: center; */
 }
 .hero-description {
+    margin-top: 163px;
     width: 460px;
 }
 .hero-title {
@@ -102,7 +102,7 @@ header {
     font-family: Georgia;
 }
 .hero-text {
-    margin-top: 40px;
+    margin-top: 41px;
     color: #CDCDCD;
     line-height: 24px;
     font-family: Arial, Helvetica, sans-serif;
@@ -115,18 +115,20 @@ header {
     color: #292929;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 42px;
     padding: 15px 45px;
     font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
+    line-height: 22px;
     border-radius: 100px;
     border: 0;
     background-color: #F1CDB3;
     transition: .3s;
+    letter-spacing: 1px;
 }
 .hero-button:hover {
-    background-color: #e0aa83
+    background-color: #FDDCC4;
 }
 .hero-image {
     display: flex;
@@ -140,18 +142,23 @@ header {
 .about-content {
     padding: 80px 40px 100px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center;
 }
 .about-image {
+    margin-right: 120px;
 }
 .about-description {
     width: 430px;
+    margin-top: 16px;
 }
 .about-title{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
     font-size: 35px;
     color: #545454;
+    line-height: 45px;
+    letter-spacing: 2px;
 }
 .about-text{
     margin-top: 25px;
@@ -166,7 +173,7 @@ header {
     background-color: #F6F6F6;
 }
 .pets-content {
-    padding: 80px 40px 100px;
+    padding: 77px 40px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,7 +188,7 @@ header {
     width: 400px;
     text-align: center;
     line-height: 45px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #545454;
 }
 .pets-sliders {
@@ -223,7 +230,8 @@ header {
     cursor: pointer;
 }
 .slider-back:hover, .slider-forward:hover {
-    background: #F1CDB3;
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
 }
 .slider-item {
     display: flex;
@@ -231,6 +239,8 @@ header {
     align-items: center;
     background: #FAFAFA;
     transition: .2s;
+    border-radius: 9px;
+    overflow: hidden;
 }
 .slider-image {
     display: flex;
@@ -241,7 +251,7 @@ header {
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: #545454;
 }
 .slider-more {
@@ -250,10 +260,10 @@ header {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
     font-size: 17px;
-    line-height: 22px;
-    letter-spacing: 2px;
+    line-height: 18px;
+    letter-spacing: 1px;
     color: #292929;
-    padding: 15px 45px;
+    padding: 15px 42px;
     border-radius: 100px;
     border: 2px solid #F1CDB3;
     background-color: #FFFFFF;
@@ -263,25 +273,27 @@ header {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
     font-size: 17px;
-    line-height: 22px;
-    letter-spacing: 2px;
+    line-height: 18px;
+    letter-spacing: 1px;
     text-decoration: none;
     color: #292929;
-    padding: 15px 45px;
+    padding: 15px 44px;
     border-radius: 100px;
     background-color: #F1CDB3;
     border: 2px solid #F1CDB3;
     transition: .2s;
 }
 .pets-link:hover {
-    background-color: #FFFFFF;
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
 }
 .slider-item:hover {
-    background-color: #fcf0e7;
-    
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .slider-item:hover > .slider-more {
-    background-color: #F1CDB3;
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
     cursor: pointer;
 }
 
@@ -309,13 +321,16 @@ header {
     margin: 60px 87px 0px;
     display: flex;
     flex-wrap: wrap;
-    gap: 120px;
+    gap: 55px 120px;
     justify-content: center;
 }
 .list-item {
 }
 .item-icon {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 30px;
     display: flex;
     justify-content: center;
 }
@@ -328,6 +343,7 @@ header {
     line-height: 23px;
     letter-spacing: 1px;
     text-align: center;
+    color: #545454;
 }
 
 .donation {
@@ -354,7 +370,7 @@ header {
     font-weight: 400;
     font-size: 35px;
     line-height: 45px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     width: 300px;
     margin-bottom: 20px;
 }
@@ -377,14 +393,15 @@ header {
 }
 .donation-card {
     background-color: #F1CDB3;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 9px;
     margin-bottom: 20px;
     border: 2px solid #F1CDB3;
     transition: .2s;
 }
 .donation-card:hover {
-    background-color: #ffffff;
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
 }
 .credit-card {
     display: flex;
@@ -417,21 +434,31 @@ header {
 .footer-contacts, .footer-locations {
     display: flex;
     flex-direction: column;
+    margin-top: 16px;
 }
 .footer-title {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
     font-size: 35px;
     line-height: 45px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #FFFFFF;
     margin-bottom: 40px;
 }
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 40px;
 }
+.footer-contacts > .footer-links {
+    gap: 45px;
+}
+.footer-locations > .footer-links {
+    gap: 33px;
+}
+.footer-locations > .footer-title {
+    margin-bottom: 33px;
+}
+
 .link {
     display: flex;
     gap: 20px;
