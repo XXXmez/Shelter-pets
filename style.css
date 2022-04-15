@@ -6,6 +6,9 @@
 a {
     text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 header {
     position: absolute;

@@ -143,6 +143,7 @@ main {
 }
 .navig-button-active {
     background-color: #F1CDB3;
+    pointer-events: none;
 }
 .navig-button:hover {
     background-color: #FDDCC4;
