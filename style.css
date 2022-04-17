@@ -572,6 +572,7 @@ header {
     .donation-content {
         flex-direction: column;
         gap: 59px;
+        padding: 80px 0 96px;
     }
     .donation-description {
         order: -1;
@@ -581,7 +582,7 @@ header {
         flex-wrap: wrap;
         gap: 65px 60px;
         justify-content: center;
-        padding: 27px 30px 0;
+        padding: 30px 30px 0;
     }
     .footer-contacts, .footer-locations {
         margin-top: 0;
@@ -664,7 +665,7 @@ header {
     }
 
     .burger {
-        display: block;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -687,7 +688,7 @@ header {
         justify-content: center;
     }
     .burger.burger-active span:nth-child(1){
-        transform: rotate(45deg) translateX(2px) translateY(3px);
+        transform: rotate(45deg) translateX(1px) translateY(3px);
     }
     .burger-active span:nth-child(2){
         opacity: 0;
@@ -720,7 +721,7 @@ header {
     }
 
     .about-content {
-        padding: 44px 10px;
+        padding: 44px 10px 36px;
     }
     .about-title {
         font-size: 25px;
@@ -743,7 +744,7 @@ header {
     }
 
     .pets-content {
-        padding: 35px 10px;
+        padding: 42px 10px;
     }
     .pets-title {
         width: 100%;
@@ -769,7 +770,7 @@ header {
     }
 
     .help-content {
-        padding: 48px 15px;
+        padding: 43px 15px 41px;
     }
     .help-description {
         margin-bottom: 42px;
@@ -797,7 +798,7 @@ header {
     }
 
     .donation-content {
-        padding: 36px 10px 39px;
+        padding: 42px 10px 39px;
         gap: 42px;
     }
     .donation-description {
