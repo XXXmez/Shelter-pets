@@ -5,23 +5,34 @@ const burgerButton = document.querySelector('.burger'),
 
 function burgerMenu() {
     if (!burgerButton.classList.contains('burger-active')) {
-        burgerButton.classList.add('burger-active');
+        burgerAdd(burgerButton, 'burger-active');
     } else {
-        burgerButton.classList.remove('burger-active');
+        burgerRemove(burgerButton, 'burger-active');
     }
 
     if (!headerNav.classList.contains('header-nav-active')) {
-        headerNav.classList.add('header-nav-active');
+        burgerAdd(headerNav, 'header-nav-active');
     } else {
-        headerNav.classList.remove('header-nav-active');
+        burgerRemove(headerNav, 'header-nav-active');
     }
 
     if (!body.classList.contains('body-burger-active')) {
-        body.classList.add('body-burger-active');
+        burgerAdd(body, 'body-burger-active');
     } else {
-        body.classList.remove('body-burger-active');
+        burgerRemove(body, 'body-burger-active');
     }
 }
 
+function burgerAdd(elem, className) {
+    elem.classList.add(className);
+}
+function burgerRemove(elem, className) {
+    elem.classList.remove(className);
+}
+
 burgerButton.addEventListener('click', () => burgerMenu());
-navItems.forEach(e => {e.addEventListener('click', () => burgerMenu())})
+navItems.forEach(e => {e.addEventListener('click', () => {
+    burgerRemove(burgerButton, 'burger-active');
+    burgerRemove(headerNav, 'header-nav-active');
+    burgerRemove(body, 'body-burger-active');
+})});
