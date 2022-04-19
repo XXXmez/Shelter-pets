@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link rel="shortcut icon" href="./files/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -45,7 +48,7 @@
                     <div class="hero-description">
                         <h2 class="hero-title">Not only people need&nbsp;a&nbsp;house</h2>
                         <p class="hero-text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                        <a href="#pets" class="hero-button">Make a friend</a>
+                        <a href="./pets" class="hero-button">Make a friend</a>
                     </div>
                     <div class="hero-image">
                         <img src="./files/png/puppy.png" alt="puppy">
@@ -74,29 +77,29 @@
                         <h3 class="pets-title">Our friends who are&nbsp;looking for a house</h3>
                     </div>
                     
-                    <div class="pets-sliders">
-                        <button class="slider-back">
+                    <div class="pets-sliders swiper">
+                        <button class="slider-back swiper-button-prev">
                             <img src="./files/svg/Arrow-l.svg" alt="Arrow-l">
                         </button>
-                        <button class="slider-forward">
+                        <button class="slider-forward swiper-button-next">
                             <img src="./files/svg/Arrow-r.svg" alt="Arrow-r">
                         </button>
-                        <div class="sliders-container">
-                            <div class="slider-item">
+                        <div class="sliders-container swiper-wrapper">
+                            <div class="slider-item swiper-slide">
                                 <div class="slider-image">
                                     <img src="./files/jpg/pets-katrine.jpg" alt="katrine" class="pets-image">
                                 </div>
                                 <div class="slider-text">Katrine</div>
                                 <button class="slider-more">Learn more</button>
                             </div>
-                            <div class="slider-item">
+                            <div class="slider-item swiper-slide">
                                 <div class="slider-image">
                                     <img src="./files/jpg/pets-jennifer.jpg" alt="katrine" class="pets-jennifer">
                                 </div>
                                 <div class="slider-text">Jennifer</div>
                                 <button class="slider-more">Learn more</button>
                             </div>
-                            <div class="slider-item">
+                            <div class="slider-item swiper-slide">
                                 <div class="slider-image">
                                     <img src="./files/jpg/pets-woody.jpg" alt="katrine" class="pets-woody">
                                 </div>
@@ -260,6 +263,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

@@ -186,6 +186,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 0;
 }
 .pets-description{
 
@@ -207,6 +208,9 @@ header {
     position: relative;
     display: flex;
     align-items: center;
+}
+.swiper {
+    width: 990px;
 }
 .sliders-container{
     display: flex;
@@ -243,6 +247,7 @@ header {
     border: 2px solid #FDDCC4;
 }
 .slider-item {
+    width: 270px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -645,6 +650,9 @@ header {
         gap: 42px;
         align-items: center;
     }
+    .nav-item:nth-child(3), .nav-item:nth-child(4) {
+        pointer-events: none;
+    }
     .nav-link {
         font-size: 32px;
         line-height: 51px;
@@ -682,19 +690,8 @@ header {
         height: 2px;
         background-color: #F1CDB3;
     }
-    .burger-active {
-        gap: 0;
-        height: 22px;
-        justify-content: center;
-    }
-    .burger.burger-active span:nth-child(1){
-        transform: rotate(45deg) translateX(1px) translateY(3px);
-    }
-    .burger-active span:nth-child(2){
-        opacity: 0;
-    }
-    .burger-active span:nth-child(3){
-        transform: rotate( -45deg ) translateX(1px) translateY(-2px);
+    .burger-active{
+        transform: rotateZ(90deg);
     }
     .body-burger-active {
         overflow: hidden;
