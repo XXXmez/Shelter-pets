@@ -1,3 +1,13 @@
+@keyframes appearanceOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -255,6 +265,8 @@ header {
     transition: .2s;
     border-radius: 9px;
     overflow: hidden;
+    animation: appearanceOpacity;
+    animation-duration: 1s;
 }
 .slider-image {
     display: flex;

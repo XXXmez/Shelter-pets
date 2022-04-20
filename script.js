@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navItems = document.querySelectorAll('.nav-item'),
     slidersContainer = document.querySelector('.sliders-container'),
     sliderBack = document.querySelector('.slider-back'),
-    sliderForward = document.querySelector('.slider-forward');
+    sliderForward = document.querySelector('.slider-forward'),
+    btnSlider = document.querySelectorAll('.btn-slider');
 
     
     // berger menu
@@ -56,39 +57,56 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('slider-item');
         item.innerHTML = `
             <div class="slider-image">
-                <img src=${pet.img} alt="${pet.name}" class="pets-image">
+                <img width="270" height="270" src=${pet.img} alt="${pet.name}" class="pets-image">
             </div>
             <div class="slider-text">${pet.name}</div>
             <button class="slider-more">Learn more</button>
         `;
 
-        console.log(item);
+        item.addEventListener('click', () => {
+            console.log(pet.description, pet.age);
+        })
+
         slidersContainer.append(item)
     }
+
+    
 
     fetch('./assets/data/pets.json')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data) {
-            const arrIdPet = [];
-            for (let i = 0; i < 3; i++){
-                arrIdPet.push(i);
-                console.log(data[i]);
-                cardPet(data[i])
-            }
+            let arrPet = [0,1,2];
+            arrPet.forEach(e => {
+                cardPet(data[e])
+            })
 
-            sliderForward.addEventListener('click', () => {
-                slidersContainer.innerHTML = '';
-                for (let i = 3; i < 6; i++){
-                    console.log(data[i]);
-                    cardPet(data[i])
-                }
-            });
-
-            console.log(arrIdPet);
+            btnSlider.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const arrNew = [];
+                    
+                    for (let i = 0; i < 3; i++){
+                        let rand = Math.round(Math.random() * ((data.length - 1)));
+    
+                        if (arrPet.indexOf(rand) == -1 && arrNew.indexOf(rand)  == -1 ) {
+                            arrNew.push(rand)
+                        } else {
+                            i--
+                        }
+                    }
+    
+                    arrPet = arrNew;
+    
+                    slidersContainer.innerHTML = '';
+                    arrPet.forEach(e => {
+                        cardPet(data[e])
+                        console.log(data[e], e);
+                    })
+                });
+            })
         }
     })
     .catch((error) => {
