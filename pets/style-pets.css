@@ -183,26 +183,30 @@ main {
         padding: 0 10px;
     }
 
+    nav {
+        background-color: #F6F6F6;
+    }
+
     .nav-link {
-        color: #CDCDCD;
+        /* color: #CDCDCD; */
     }
     .nav-item-active > .nav-link {
-        color: #FAFAFA;
+        /* color: #FAFAFA; */
     }
     .nav-item:hover > .nav-link {
-        color: #FAFAFA;
+        /* color: #FAFAFA; */
     }
     .burger span {
         background-color: #000000;
     }
     .burger-active span {
-        background-color: #F1CDB3;
+        /* background-color: #F1CDB3; */
     }
     .header-nav-logo-link .header-title {
-        color: #F1CDB3;
+        /* color: #F1CDB3; */
     }
     .header-nav-logo-link .header-subtitle {
-        color: #FFFFFF;
+        /* color: #FFFFFF; */
     }
 
     .our-pets-content {
