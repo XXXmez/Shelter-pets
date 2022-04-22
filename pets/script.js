@@ -181,7 +181,7 @@ class createCards {
 
     createCard () {
         for (let i = currentArr.length; i < this.size; i++){
-            currentArr.
+            currentArr
         }
     }
 }
@@ -206,9 +206,9 @@ window.addEventListener('resize', () => {
 
 sizeWindow = reWindow()
 
-function reload (aaa) {
-    let aaa = 8;
-    for (let i = currentArr.length; i < aaa; i++){
-        currentArr
-    }
-}
+// function reload (aaa) {
+//     let aaa = 8;
+//     for (let i = currentArr.length; i < aaa; i++){
+//         currentArr
+//     }
+// }
