@@ -107,7 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
             burgerRemove(body, 'body-hidden');
         })
         modal.addEventListener('click', (e) => {
-            if (e.target = 'modal') {
+            // console.log(e.target);
+            if (e.target == modal) {
                 modal.remove(modal)
                 burgerRemove(body, 'body-hidden');
             }
