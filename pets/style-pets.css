@@ -2,6 +2,7 @@ header {
     height: 120px;
     position: fixed;
     background-color: #ffffff;
+    z-index: 2;
 }
 .header-container {
     padding: 0 40px;
@@ -72,6 +73,9 @@ main {
     transition: .2s;
     border-radius: 9px;
     overflow: hidden;
+    animation: appearanceOpacity;
+    animation-duration: 1s;
+    z-index: 1;
 }
 .pet-card-image {
     display: flex;
@@ -183,26 +187,33 @@ main {
         padding: 0 10px;
     }
 
+    nav {
+        background-color: #F6F6F6;
+    }
+
     .nav-link {
-        color: #CDCDCD;
+        /* color: #CDCDCD; */
     }
     .nav-item-active > .nav-link {
-        color: #FAFAFA;
+        /* color: #FAFAFA; */
     }
     .nav-item:hover > .nav-link {
-        color: #FAFAFA;
+        /* color: #FAFAFA; */
     }
     .burger span {
         background-color: #000000;
     }
     .burger-active span {
-        background-color: #F1CDB3;
+        /* background-color: #F1CDB3; */
     }
     .header-nav-logo-link .header-title {
-        color: #F1CDB3;
+        /* color: #F1CDB3; */
     }
     .header-nav-logo-link .header-subtitle {
-        color: #FFFFFF;
+        /* color: #FFFFFF; */
+    }
+    .header-nav-background {
+        background-color: #ffffff;
     }
 
     .our-pets-content {
