@@ -1,8 +1,13 @@
 # Shelter-pets
-### shelter is a project in which a site is made up, consisting of two pages, adaptive and interactive.
+## Shelter is a project in which I did the work of laying out a site consisting of two pages, making it adaptive and interactive.
 
-## Branch "layout"
-### In this branch, the layout of the project, html + css, is done, only the desktop version
+## Fixed layout of the main and pets pages.
+### At this stage, work on the fixed layout of two pages has been completed. With a fixed layout, the pages look the same if the window width is at least 1280px.
 
-## Branch "adaptive"
-### In this thread, work was done on the adaptive part of the site, work on the mobile and tablet version of the site
+## Adding layout adaptability.
+### At this stage, work has been done to adapt the previously created pages according to the layout for different window widths up to 320px inclusive.
+
+## Adding additional functionality.
+### At this stage, additional functionality has been added to previously made pages: slider, pagination, popup
+
+[Layout](https://www.figma.com/file/dlSjuW2e0y33c5N4XZoyaZ/shelter-dom?node-id=94%3A43)
