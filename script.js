@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal(pet.name, pet.breed, pet.description, pet.age, pet.inoculations, pet.diseases, pet.parasites, pet.img)
         })
 
-        slidersContainer.append(item)
+        if (slidersContainer) slidersContainer.append(item)
     }
 
     function modal(name, breed, description, age, inoculations, diseases, parasites, img) {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-    fetch('./assets/data/pets.json')
+    fetch('../assets/data/pets.json')
     .then((response) => {
         return response.json();
     })

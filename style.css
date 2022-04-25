@@ -519,6 +519,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 3;
+}
+.modal:hover .modal-close {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+}
+.modal-container:hover .modal-close {
+    background: red;
+    border: 2px solid red;
 }
 .modal-container {
     cursor: auto;

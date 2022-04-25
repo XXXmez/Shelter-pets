@@ -93,7 +93,7 @@ const ourPetsCards = document.querySelector('.our-pets-cards'),
     body = document.querySelector('body'),
     navigButton = document.querySelectorAll('.navig-button');
 
-console.log(data);
+// console.log(data);
 
 function burgerAdd(elem, className) {
     elem.classList.add(className);
@@ -103,13 +103,13 @@ function burgerRemove(elem, className) {
 }
 function cardPet(pet) {
     let item = document.createElement('div');
-    item.classList.add('slider-item', 'swiper-slide');
+    item.classList.add('pet-card');
     item.innerHTML = `
-        <div class="slider-image">
+        <div class="pet-card-image">
             <img width="270" height="270" src=${pet.img} alt="${pet.name}" class="pets-image">
         </div>
-        <div class="slider-text">${pet.name}</div>
-        <button class="slider-more">Learn more</button>
+        <div class="pet-card-text">${pet.name}</div>
+        <button class="pet-card-more">Learn more</button>
     `;
 
     item.addEventListener('click', () => {
@@ -164,51 +164,124 @@ function modal(name, breed, description, age, inoculations, diseases, parasites,
     body.append(modal)
 }
 
-data.forEach((e) => {
-    cardPet(e)
-})
 
 
-let sizeWindow = '';
-let amountCard = 0;
-let currentArr = [];
+let navigButtonNext = document.querySelector('.navig-button-next'),
+    navigButtonPrev = document.querySelector('.navig-button-prev'),
+    navigButtonPagination = document.querySelector('.navig-button-pagination'),
+    navigButtonEnd = document.querySelector('.navig-button-end'),
+    navigButtonFirst = document.querySelector('.navig-button-first');
 
+let sizeWindow = 0;
+const arr = [1,2,3,4,5,6,7,8];
+const newArr48 = [];
 
-class createCards {
-    constructor (size) {
-        this.size = size;
-    }
-
-    createCard () {
-        for (let i = currentArr.length; i < this.size; i++){
-            currentArr
-        }
+function creatArr48(array) {
+    const arrCopy = [...data];
+    for (let i = 0; i < 48/arr.length; i++) {
+        let partArr = arrCopy.splice(0, 1);
+        arrCopy.push(partArr)
+        newArr48.push(arrCopy.flat());
     }
 }
+creatArr48()
 
-
-function reWindow(){
+function reWindow() {
     let sw = document.documentElement.clientWidth;
     if (sw >=1280) {
-        amountCard = 8;
+        return 8;
     }
     if (sw < 1280 && sw > 768) {
-        amountCard = 6;
+        return 6;
     }
     if (sw < 768) {
-        amountCard = 3;
+        return 3;
+    }
+}
+sizeWindow = reWindow()
+
+let activeFirstPet = 0;                             // первая активная карточка
+let totalOutpuItem = 0;                             // всего выведено элементов
+let maxPages = newArr48.flat().length / sizeWindow; // максимальное количество страниц
+let currentSratePage = 0;                           // текущее количество выведенных элементов
+let currentPage = 0;                                // текущая страница
+
+function blockBtn(){
+    if (currentPage == maxPages){
+        navigButtonNext.classList.add('navig-button-unactive');
+        navigButtonEnd.classList.add('navig-button-unactive');
+    } else {
+        navigButtonNext.classList.remove('navig-button-unactive');
+        navigButtonEnd.classList.remove('navig-button-unactive');
+    }
+    if (currentPage > 1) {
+        navigButtonPrev.classList.remove('navig-button-unactive');
+        navigButtonFirst.classList.remove('navig-button-unactive');
+    } else {
+        navigButtonPrev.classList.add('navig-button-unactive');
+        navigButtonFirst.classList.add('navig-button-unactive');
     }
 }
 
-window.addEventListener('resize', () => {
-    sizeWindow = reWindow()
+function loadPets(size, current){
+    currentPage++;
+    ourPetsCards.innerHTML = '';
+
+    for (let i = current; i < current + size; i++) {
+        cardPet(newArr48.flat()[i])
+        currentSratePage = i;
+    }
+
+    navigButtonPagination.innerText = currentPage;
+
+    blockBtn()
+}
+loadPets(sizeWindow, currentSratePage)
+
+function loadPetsBack(size, current){
+    currentPage--;
+    ourPetsCards.innerHTML = '';
+    navigButtonPagination.innerText = currentPage;
+
+    for (let i = current - (size * 2); i < current - size; i++){
+        console.log(i);
+        cardPet(newArr48.flat()[i])
+        currentSratePage = i;
+    }
+
+    blockBtn()
+}
+
+navigButtonNext.addEventListener('click', () => {
+    loadPets(sizeWindow, currentSratePage+1)
 })
+navigButtonPrev.addEventListener('click', () => {
+    loadPetsBack(sizeWindow, currentSratePage+1)
+})
+navigButtonEnd.addEventListener('click', () => {
+    ourPetsCards.innerHTML = '';
+    currentPage = maxPages;
+    navigButtonPagination.innerText = currentPage;
 
-sizeWindow = reWindow()
+    let initElem = newArr48.flat().length - sizeWindow;
 
-// function reload (aaa) {
-//     let aaa = 8;
-//     for (let i = currentArr.length; i < aaa; i++){
-//         currentArr
-//     }
-// }
+    for (let i = initElem; i < initElem + sizeWindow; i++) {
+        cardPet(newArr48.flat()[i])
+    }
+
+    blockBtn()
+
+    currentSratePage = newArr48.flat().length - 1;
+})
+navigButtonFirst.addEventListener('click', () => {
+    ourPetsCards.innerHTML = '';
+    currentPage = 1;
+    navigButtonPagination.innerText = currentPage;
+
+    for (let i = 0; i < sizeWindow; i++) {
+        cardPet(newArr48.flat()[i]);
+        currentSratePage = i;
+    }
+
+    blockBtn()
+})
