@@ -1,4 +1,6 @@
 # Shelter-pets
+![image](https://user-images.githubusercontent.com/57019591/165101961-e3b1fca3-bf69-4bee-b8fd-66296670b844.png)
+
 Shelter is a project in which I did the work of laying out a site consisting of two pages, making it adaptive and interactive.
 
 ## Fixed layout of the main and pets pages.
