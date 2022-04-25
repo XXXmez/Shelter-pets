@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     sizeWindow = reWindow()
 
-    fetch('../assets/data/pets.json')
+    fetch('./assets/data/pets.json')
     .then((response) => {
         return response.json();
     })
