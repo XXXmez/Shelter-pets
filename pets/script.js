@@ -176,7 +176,7 @@ let r = Math.round(Math.random());
 const arr = [1,2,3,4,5,6,7,8];
 const newArr48 = [];
 
-function creatArr48(array) {
+function creatArr48() {
     const arrCopy = [...data];
     for (let i = 0; i < 48/arr.length; i++) {
         let partArr = arrCopy.splice(0, 1);
@@ -255,14 +255,16 @@ function loadPetsBack(size, current){
         currentSratePage = i;
     }
 
-    blockBtn()
+    blockBtn();
 }
 
 navigButtonNext.addEventListener('click', () => {
-    loadPets(sizeWindow, currentSratePage+1)
+    loadPets(sizeWindow, currentSratePage+1);
+    window.scrollTo(0, ourPetsCards.offsetTop-120);
 })
 navigButtonPrev.addEventListener('click', () => {
-    loadPetsBack(sizeWindow, currentSratePage+1)
+    loadPetsBack(sizeWindow, currentSratePage+1);
+    window.scrollTo(0, ourPetsCards.offsetTop-120);
 })
 navigButtonEnd.addEventListener('click', () => {
     ourPetsCards.innerHTML = '';
@@ -275,7 +277,8 @@ navigButtonEnd.addEventListener('click', () => {
         cardPet(newArr48.flat()[i])
     }
 
-    blockBtn()
+    blockBtn();
+    window.scrollTo(0, ourPetsCards.offsetTop-120);
 
     currentSratePage = newArr48.flat().length - 1;
 })
@@ -289,5 +292,6 @@ navigButtonFirst.addEventListener('click', () => {
         currentSratePage = i;
     }
 
-    blockBtn()
+    blockBtn();
+    window.scrollTo(0, ourPetsCards.offsetTop-120);
 })
