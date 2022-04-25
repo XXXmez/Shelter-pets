@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     slidersContainer = document.querySelector('.sliders-container'),
     sliderBack = document.querySelector('.slider-back'),
     sliderForward = document.querySelector('.slider-forward'),
-    btnSlider = document.querySelectorAll('.btn-slider');
+    btnSlider = document.querySelectorAll('.btn-slider'),
+    petsSliders = document.querySelector('.pets-sliders');
 
     
     // berger menu
@@ -52,9 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // карточки питомцев
-    function cardPet(pet) {
+    function cardPet(pet, style) {
         let item = document.createElement('div');
         item.classList.add('slider-item');
+        if (style) item.classList.add(style);
         item.innerHTML = `
             <div class="slider-image">
                 <img width="270" height="270" src=${pet.img} alt="${pet.name}" class="pets-image">
@@ -68,6 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         if (slidersContainer) slidersContainer.append(item)
+
+        setTimeout(()=> {item.classList.remove(style)},1100)
     }
 
     function modal(name, breed, description, age, inoculations, diseases, parasites, img) {
@@ -117,7 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
         body.append(modal)
     }
 
-    
+    let sizeWindow = 0;
+    function reWindow() {
+        let sw = document.documentElement.clientWidth;
+        if (sw >=1280) {
+            return 3;
+        }
+        if (sw < 1280 && sw > 768) {
+            return 2;
+        }
+        if (sw < 768) {
+            return 1;
+        }
+    }
+    sizeWindow = reWindow()
 
     fetch('../assets/data/pets.json')
     .then((response) => {
@@ -126,33 +143,65 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((data) => {
         // console.log(data);
         if (data) {
-            let arrPet = [0,1,2];
+            let arrPet = [];
+            // let arrPet = [0,1,2];
+            for (let i = 0; i < sizeWindow; i++) {
+                arrPet.push(i);
+            }
             arrPet.forEach(e => {
                 cardPet(data[e])
-            })
-
-            btnSlider.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const arrNew = [];
-                    
-                    for (let i = 0; i < 3; i++){
-                        let rand = Math.round(Math.random() * ((data.length - 1)));
-    
-                        if (arrPet.indexOf(rand) == -1 && arrNew.indexOf(rand)  == -1 ) {
-                            arrNew.push(rand);
-                        } else {
-                            i--;
-                        }
-                    }
-    
-                    arrPet = arrNew;
-    
-                    slidersContainer.innerHTML = '';
-                    arrPet.forEach(e => {
-                        cardPet(data[e]);
-                    });
-                });
             });
+
+            function cardCar(transfer, dotTransfer, appearance){
+                let sliderItem = document.querySelectorAll('.slider-item');
+                sliderItem.forEach((e) => {
+                    e.classList.add(transfer)
+                })
+                setTimeout(() => {
+                    let animTransfer= document.querySelectorAll(dotTransfer);
+                    animTransfer.forEach(e => {
+                        e.remove(e)
+                    });
+                }, 1000)
+        
+                
+                const arrNew = [];
+                    
+                for (let i = 0; i < sizeWindow; i++){
+                    let rand = Math.round(Math.random() * ((data.length - 1)));
+        
+                    if (arrPet.indexOf(rand) == -1 && arrNew.indexOf(rand)  == -1 ) {
+                        arrNew.push(rand);
+                    } else {
+                        i--;
+                    }
+                }
+        
+                arrPet = arrNew;
+                
+                setTimeout(() => {
+                    arrPet.forEach(e => {
+                        cardPet(data[e], appearance);
+                    });
+                }, 1000)
+
+                btnSlider.forEach(e => {
+                    e.style.pointerEvents = 'none';
+                    setTimeout(()=> {e.style.pointerEvents = 'auto'},2000)
+                })
+
+            }
+            if (sliderBack) {
+                sliderBack.addEventListener('click', () => {
+                    cardCar('animTransferLeft', '.animTransferLeft', 'animAppearanceRight')
+                });
+            }
+            if (sliderForward) {
+                sliderForward.addEventListener('click', () => {
+                    cardCar('animTransferRight', '.animTransferRight', 'animAppearanceleft')
+                });
+            }
+            
         }
     })
     .catch((error) => {

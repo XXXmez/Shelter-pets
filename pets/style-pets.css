@@ -212,6 +212,9 @@ main {
     .header-nav-logo-link .header-subtitle {
         /* color: #FFFFFF; */
     }
+    .header-nav-background {
+        background-color: #ffffff;
+    }
 
     .our-pets-content {
         padding: 42px 10px;

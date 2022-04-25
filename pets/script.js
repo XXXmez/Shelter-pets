@@ -93,8 +93,6 @@ const ourPetsCards = document.querySelector('.our-pets-cards'),
     body = document.querySelector('body'),
     navigButton = document.querySelectorAll('.navig-button');
 
-// console.log(data);
-
 function burgerAdd(elem, className) {
     elem.classList.add(className);
 }
@@ -173,6 +171,8 @@ let navigButtonNext = document.querySelector('.navig-button-next'),
     navigButtonFirst = document.querySelector('.navig-button-first');
 
 let sizeWindow = 0;
+let r = Math.round(Math.random());
+
 const arr = [1,2,3,4,5,6,7,8];
 const newArr48 = [];
 
@@ -185,6 +185,12 @@ function creatArr48(array) {
     }
 }
 creatArr48()
+
+
+if (r) {
+    newArr48.reverse()
+    newArr48.forEach(e => e.reverse())
+}
 
 function reWindow() {
     let sw = document.documentElement.clientWidth;
