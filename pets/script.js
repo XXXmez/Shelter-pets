@@ -197,7 +197,7 @@ function reWindow() {
     if (sw >=1280) {
         return 8;
     }
-    if (sw < 1280 && sw > 768) {
+    if (sw < 1280 && sw >= 768) {
         return 6;
     }
     if (sw < 768) {
