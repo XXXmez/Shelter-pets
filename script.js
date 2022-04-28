@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sw >=1280) {
             return 3;
         }
-        if (sw < 1280 && sw > 768) {
+        if (sw < 1280 && sw >= 768) {
             return 2;
         }
         if (sw < 768) {
